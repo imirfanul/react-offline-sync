@@ -1,0 +1,33 @@
+{
+	"compilerOptions": {
+		/* Base Options */
+		"target": "ES2019" /* Compatible with most modern browsers */,
+		"module": "ESNext" /* Leave module resolution to the bundler (tsup) */,
+		"lib": [
+			"DOM",
+			"DOM.Iterable",
+			"ESNext"
+		] /* "DOM" is needed for window/navigator/fetch */,
+		"allowJs": false,
+		"skipLibCheck": true /* Speed up compilation */,
+		"esModuleInterop": true /* Allow default imports from CommonJS modules */,
+		"allowSyntheticDefaultImports": true,
+		"strict": true /* Enable all strict type-checking options */,
+		"forceConsistentCasingInFileNames": true,
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+
+		/* React Options */
+		"jsx": "react-jsx" /* Essential for React 17+ (no need to import React) */,
+
+		/* Library Specifics */
+		"declaration": true /* Generate .d.ts files */,
+		"declarationMap": true /* Help consumers debug into your library */,
+		"sourceMap": true /* Generate source maps for debugging */,
+		"outDir": "./dist",
+		"rootDir": "./src"
+	},
+	"include": ["src"],
+	"exclude": ["node_modules", "dist", "**/*.test.ts"]
+}

@@ -1,0 +1,42 @@
+{
+	"name": "react-offline-sync",
+	"version": "1.0.0",
+	"description": "Enterprise-grade offline synchronization for React apps using IndexedDB",
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"require": "./dist/index.js",
+			"import": "./dist/index.mjs",
+			"types": "./dist/index.d.ts"
+		}
+	},
+	"files": [
+		"dist",
+		"README.md",
+		"LICENSE"
+	],
+	"scripts": {
+		"build": "tsup",
+		"test": "vitest",
+		"prepublishOnly": "npm run test && npm run build"
+	},
+	"peerDependencies": {
+		"react": ">=16.8.0",
+		"react-dom": ">=16.8.0"
+	},
+	"dependencies": {
+		"idb-keyval": "^6.0.0"
+	},
+	"keywords": [
+		"react",
+		"offline-first",
+		"sync",
+		"indexeddb",
+		"hooks",
+		"pwa"
+	],
+	"author": "Md Irfanul Alam",
+	"license": "MIT"
+}
