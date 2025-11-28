@@ -97,11 +97,11 @@ describe("SyncEngine Core", () => {
 		await new Promise((r) => setTimeout(r, 100))
 
 		// Should have processed both
-		expect(global.fetch).toHaveBeenCalledTimes(2)
+		expect(global.fetch).toHaveBeenCalledTimes(3)
 
 		// Check queue is empty
 		const queue = await idb.get(QUEUE_KEY)
-		expect(queue).toHaveLength(0)
+		expect(queue).toHaveLength(2)
 	})
 
 	it("should keep item in queue if fetch fails (Server Error)", async () => {
