@@ -105,7 +105,7 @@ export class SyncEngine {
 					this.config.onSuccess(data, currentReq)
 
 				// Remove from queue
-				await update(QUEUE_KEY, (old: RequestPayload[]) => old.slice(1))
+				await update(QUEUE_KEY, (old: RequestPayload[] = []) => old.slice(1))
 
 				// Recursive call to process next item immediately
 				this.processQueue()
@@ -116,7 +116,7 @@ export class SyncEngine {
 					this.log("Dropping bad request (4xx).")
 					if (this.config.onError)
 						this.config.onError(error, currentReq)
-					await update(QUEUE_KEY, (old: RequestPayload[]) =>
+					await update(QUEUE_KEY, (old: RequestPayload[] = []) =>
 						old.slice(1)
 					)
 					this.processQueue() // Move next
@@ -139,7 +139,7 @@ export class SyncEngine {
 		this.log(`Sync failed. Scheduling retry...`)
 
 		// Increment retry count in DB
-		await update(QUEUE_KEY, (old: RequestPayload[]) => {
+		await update(QUEUE_KEY, (old: RequestPayload[] = []) => {
 			if (!old.length) return []
 			const head = old[0]
 			// Sanity check: ensure we are updating the right item

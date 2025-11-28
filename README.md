@@ -7,6 +7,8 @@
 Building offline-first apps is hard. `react-offline-sync` handles the complexity of queueing mutations (POST/PUT/DELETE) to IndexedDB when the user is offline, and automatically synchronizing them with the server when the connection is restored. It features exponential backoff, request persistence across sessions, and TypeScript support.
 
 
+Demo: [@imirfanul/react-offline-sync](https://eloquent-malasada-9af1c1.netlify.app/)
+
 ## 🚀 Features
 
 * **Persisted Queue:** Uses `IndexedDB` (via `idb-keyval`) so requests survive browser refreshes and device restarts.
@@ -19,11 +21,11 @@ Building offline-first apps is hard. `react-offline-sync` handles the complexity
 ## 📦 Installation
 
 ```bash
-npm install react-offline-sync
+npm install @imirfanul/react-offline-sync
 # or
-yarn add react-offline-sync
+yarn add @imirfanul/react-offline-sync
 # or
-pnpm add react-offline-sync
+pnpm add @imirfanul/react-offline-sync
 ````
 
 > **Note:** This library requires `react` \>= 16.8.0.
@@ -37,7 +39,7 @@ Wrap your root component with the `OfflineSyncProvider`.
 ```tsx
 // App.tsx
 import React from 'react';
-import { OfflineSyncProvider } from 'react-offline-sync';
+import { OfflineSyncProvider } from '@imirfanul/react-offline-sync';
 import MyComponent from './MyComponent';
 
 const App = () => {
@@ -58,7 +60,7 @@ Use the `useOfflineMutation` hook to perform actions. These will execute immedia
 ```tsx
 // MyComponent.tsx
 import React, { useState } from 'react';
-import { useOfflineMutation, useSyncStatus } from 'react-offline-sync';
+import { useOfflineMutation, useSyncStatus } from '@imirfanul/react-offline-sync';
 
 const MyComponent = () => {
   const [task, setTask] = useState('');
