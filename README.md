@@ -159,5 +159,3 @@ Returns an object with:
 
 MIT © [Md Irfanul Alam](https://www.google.com/search?q=https://github.com/imirfanul)
 
-```
-```
